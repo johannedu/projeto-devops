@@ -97,7 +97,7 @@ button.editar {
     transition: background-color 0.3s ease;
 }
 button.editar:hover {
-    background-color: #744d41;
+    background-color: #be4a27;
 }
 
 .botao_lista {
