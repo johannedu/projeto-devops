@@ -7,11 +7,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      # Exemplo de deploy GitHub Pages:
+        with:
+          fetch-depth: 0  
+
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./     
+          publish_branch: gh-pages
+          force_orphan: true    
