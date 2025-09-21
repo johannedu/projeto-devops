@@ -1,7 +1,7 @@
 {
   "name": "projeto-devops-testes",
   "version": "1.0.0",
-  "description": "Projeto de tests para a disciplina de devops",
+  "description": "Projeto de testes para a disciplina de devops",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.5.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }
