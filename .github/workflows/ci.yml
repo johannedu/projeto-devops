@@ -10,16 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Passo 1: Configurar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
-      # Passo 2: Instalar dependências (Jest)
       - name: Install dependencies
         run: npm install
 
-      # Passo 3: Rodar os testes
       - name: Run unit tests
         run: npm test
