@@ -5,16 +5,21 @@ on:
     branches: [ main ]
 
 jobs:
-  check-files:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      # Exemplo simples de CI para projeto estático
-      - name: Verificar arquivos
-        run: |
-          if [ ! -f index.html ]; then
-            echo "Erro: index.html não encontrado!"
-            exit 1
-          fi
-          echo "Todos os arquivos principais existem."
+      # Passo 1: Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Passo 2: Instalar dependências (Jest)
+      - name: Install dependencies
+        run: npm install
+
+      # Passo 3: Rodar os testes
+      - name: Run unit tests
+        run: npm test
