@@ -1,0 +1,16 @@
+name: Send Discord Alert
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send alert to Discord
+        uses: appleboy/discord-action@v0.0.3
+        with:
+          webhook_id: ${{ secrets.DISCORD_WEBHOOK }}
+          message: "Novo push para o branch main. O pipeline de CD foi iniciado! "
