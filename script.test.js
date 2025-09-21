@@ -1,3 +1,4 @@
+const { adicionarTarefa, renderizarTarefas, removerTarefa, editarTarefa, tarefas } = require('./script.js');
 
 beforeEach(() => {
     document.body.innerHTML = `
@@ -5,8 +6,8 @@ beforeEach(() => {
         <p id="mensagem"></p>
         <ul id="listaTarefas"></ul>
     `;
-
-    tarefas = [];
+    // Reinicia a variável global 'tarefas' para cada teste
+    tarefas.length = 0;
 });
 
 
@@ -37,7 +38,6 @@ test('deve remover a tarefa correta da lista', () => {
 test('deve editar uma tarefa existente', () => {
     tarefas.push('Tarefa Antiga');
     
-
     window.prompt = jest.fn(() => 'Tarefa Nova');
     
     editarTarefa(0);

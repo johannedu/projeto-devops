@@ -65,3 +65,12 @@ function editarTarefa(i){
     renderizarTarefas()
   }
 }
+
+
+module.exports = {
+  adicionarTarefa,
+  renderizarTarefas,
+  removerTarefa,
+  editarTarefa,
+  tarefas
+};
