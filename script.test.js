@@ -6,7 +6,6 @@ beforeEach(() => {
         <p id="mensagem"></p>
         <ul id="listaTarefas"></ul>
     `;
-    // Reinicia a variável global 'tarefas' para cada teste
     tarefas.length = 0;
 });
 
